@@ -141,6 +141,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad8b0d96c78735b4d954637bae726943, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TomateCortavel
-  prefabMetade: {fileID: 0}
+  prefabMetade: {fileID: 1163300318454001281}
   numeroDePedacosAtual: 1
   limiteMaximoPedacos: 5

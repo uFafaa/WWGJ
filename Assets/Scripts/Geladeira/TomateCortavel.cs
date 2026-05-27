@@ -18,8 +18,8 @@ public class TomateCortavel : MonoBehaviour
         Vector3 posicaoOriginal = transform.position;
         Quaternion rotacaoOriginal = transform.rotation;
 
-        GameObject metadeEsquerda = Instantiate(prefabMetade, posicaoOriginal + Vector3.left * 0.2f, rotacaoOriginal);
-        GameObject metadeDireita = Instantiate(prefabMetade, posicaoOriginal + Vector3.right * 0.2f, rotacaoOriginal);
+        GameObject metadeEsquerda = Instantiate(prefabMetade, posicaoOriginal + Vector3.left * 0.45f, rotacaoOriginal);
+        GameObject metadeDireita = Instantiate(prefabMetade, posicaoOriginal + Vector3.right * 0.05f, rotacaoOriginal);
 
         metadeEsquerda.GetComponent<TomateCortavel>().numeroDePedacosAtual = novoNumeroDePedacos;
         metadeDireita.GetComponent<TomateCortavel>().numeroDePedacosAtual = novoNumeroDePedacos;
