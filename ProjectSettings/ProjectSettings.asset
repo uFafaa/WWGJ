@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 28
-  productGUID: 218bf55cbd9d46444880a37e15c79c47
+  productGUID: 0464e7ab301e60a468007d0fedae0d0c
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: 2DGame
+  productName: gaamejam
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -696,14 +696,14 @@ PlayerSettings:
   editorAssembliesCompatibilityLevel: 1
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: 2DGame
+  metroPackageName: gaamejam
   metroPackageVersion: 
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
   metroCertificateIssuer: 
   metroCertificateNotAfter: 0000000000000000
-  metroApplicationDescription: 2DGame
+  metroApplicationDescription: gaamejam
   wsaImages: {}
   metroTileShortName: 
   metroTileShowName: 0
@@ -772,13 +772,13 @@ PlayerSettings:
   qnxGraphicConfPath: 
   apiCompatibilityLevel: 6
   captureStartupLogs: {}
-  activeInputHandler: 1
+  activeInputHandler: 2
   windowsGamepadBackendHint: 0
-  cloudProjectId: 3bfb23e7-91fb-465e-9c66-742860d1a58e
+  cloudProjectId: 05e26c83-e33d-42e0-ad0a-77961213cd47
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: 2DGame
-  organizationId: rafaela_luiz
+  projectName: gaamejam
+  organizationId: gustavo_oliveira174
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}
