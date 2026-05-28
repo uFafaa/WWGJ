@@ -1,60 +1,66 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class RecipeManager : MonoBehaviour
 {
     public static RecipeManager instance;
 
-    public TMP_Text recipeText;
+    public TMP_Text objetivoText;
 
     public int etapaAtual = 0;
 
-    private string[] etapas =
+    private string[] objetivos =
     {
-        "Pegue o ingrediente na geladeira.",
-        "Coloque o ingrediente no fogão.",
-        "Espere cozinhar sem queimar.",
-        "Entregue o pedido."
+        "Fale com o gato para receber o pedido.",
+        "Pegue as bolachas no armário.",
+        "Leve as bolachas ao liquidificador.",
+        "Triture as bolachas.",
+        "Pegue a manteiga na geladeira.",
+        "Misture bolacha e manteiga na tigela.",
+        "Coloque a massa na forma.",
+        "Leve a forma ao freezer.",
+        "Pegue amora, açúcar e limão na geladeira.",
+        "Leve os ingredientes ao fogão.",
+        "Prepare a geleia.",
+        "Coloque a geleia na torta.",
+        "Entregue a sobremesa."
     };
 
-    void Awake()
+    private void Awake()
     {
-        instance = this;
-    }
-
-    //void Start()
-    //{
-        //AtualizarTextoReceita();
-    //}
-
-    public void CompletarEtapa(int etapa)
-    {
-        if (etapa == etapaAtual)
+        if (instance == null)
         {
-            etapaAtual++;
-            //AtualizarTextoReceita();
-
-            if (etapaAtual >= etapas.Length)
-            {
-                GameManager.instance.Vencer();
-            }
+            instance = this;
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
-            GameManager.instance.AdicionarErro();
-            GameManager.instance.MostrarDica("Você fez a ação na ordem errada.");
+            Destroy(gameObject);
         }
     }
 
-    //void AtualizarTextoReceita()
-    //{
-        //if (etapaAtual < etapas.Length)
-        //{
-            //recipeText.text = "Objetivo: " + etapas[etapaAtual];
-        //}
-        //else
-        //{
-            //recipeText.text = "Pedido finalizado!";
-        //}
-    //}
+    private void Start()
+    {
+        AtualizarObjetivo();
+    }
+
+    public void AvancarEtapa()
+    {
+        etapaAtual++;
+        AtualizarObjetivo();
+    }
+
+    public void AtualizarObjetivo()
+    {
+        if (objetivoText != null && etapaAtual < objetivos.Length)
+        {
+            objetivoText.text = objetivos[etapaAtual];
+        }
+    }
+
+    public void TrocarCena(string nomeCena)
+    {
+        SceneManager.LoadScene(nomeCena);
+    }
 }
