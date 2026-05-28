@@ -130,7 +130,6 @@ GameObject:
   - component: {fileID: 54146747}
   - component: {fileID: 54146746}
   - component: {fileID: 54146750}
-  - component: {fileID: 54146748}
   - component: {fileID: 54146744}
   - component: {fileID: 54146749}
   m_Layer: 0
@@ -260,19 +259,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &54146748
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 54146743}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7775d36fbc516d64e9872ecfa7ae69c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nomeDaCena: CenaFogao
 --- !u!61 &54146749
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1924,7 +1910,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &619706627
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1941,8 +1927,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -488.3, y: -461.9}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: -384.94562, y: -461.9}
+  m_SizeDelta: {x: 406.7087, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &619706628
 MonoBehaviour:
@@ -1964,7 +1950,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: Aperte E Para Interagir
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
