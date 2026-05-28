@@ -11,18 +11,21 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CenaCozinha.unity
     guid: 7446d5f8d89603642a8cb6120cca1620
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/CenaGeladeira.unity
     guid: 331c9691ee7f65c4898d47791b47e91f
   - enabled: 1
     path: Assets/Scenes/CenaFogao.unity
     guid: 603ddfc9843037e45b07821df042e271
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/CenaTabua.unity
     guid: 19f8e860de883ab4ea2313b9b4b65d55
   - enabled: 1
     path: Assets/Scenes/LiquidificadorCena.unity
     guid: b5da43c2c77954a4c93c20d2f7a3b4dd
+  - enabled: 1
+    path: Assets/Scenes/CenaFreezer.unity
+    guid: d14e73265b272bc4eb1113f0c0fb70a0
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
