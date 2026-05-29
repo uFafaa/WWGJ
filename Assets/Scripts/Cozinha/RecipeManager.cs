@@ -53,14 +53,17 @@ public class RecipeManager : MonoBehaviour
 
     public void AtualizarObjetivo()
     {
-        if (objetivoText != null && etapaAtual < objetivos.Length)
+        if (objetivoText == null) return;
+
+        if(etapaAtual < objetivos.Length)
         {
+
             objetivoText.text = objetivos[etapaAtual];
         }
-    }
+    }    
 
     public void TrocarCena(string nomeCena)
     {
-        SceneManager.LoadScene(nomeCena);
+         SceneManager.LoadScene(nomeCena);
     }
-}
+}    

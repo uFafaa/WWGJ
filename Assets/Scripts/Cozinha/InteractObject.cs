@@ -35,13 +35,21 @@ public class InteractObject : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
-            playerPerto = true;
+    if (collision.CompareTag("Player"))
+    {
+        playerPerto = true;
+
+        InteractionUI.instance.Mostrar("Aperte E para interagir");
     }
+    }  
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
-            playerPerto = false;
+    if (collision.CompareTag("Player"))
+    {
+        playerPerto = false;
+
+        InteractionUI.instance.Esconder();
+    }
     }
 }
