@@ -23,6 +23,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TigelaCena.unity
     guid: 4246562ffc274374bb72bebdad297a90
+  - enabled: 1
+    path: Assets/Scenes/FormaCena.unity
+    guid: db8767ee0c9d14d4c97f1bdab75304b2
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

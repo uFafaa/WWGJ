@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Bolacha
   - BolachaTriturada
+  - Colher
+  - Tigela
+  - Massa
   layers:
   - Default
   - TransparentFX
