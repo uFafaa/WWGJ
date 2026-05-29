@@ -10,6 +10,8 @@ public class RecipeManager : MonoBehaviour
 
     public int etapaAtual = 0;
 
+    public bool massaPronta = false;
+
     private string[] objetivos =
     {
         "Fale com o gato para receber o pedido.",
@@ -56,10 +58,8 @@ public class RecipeManager : MonoBehaviour
         if (objetivoText == null) return;
 
         if(etapaAtual < objetivos.Length)
-        {
-
-            objetivoText.text = objetivos[etapaAtual];
-        }
+        objetivoText.text = objetivos[etapaAtual];
+        
     }    
 
     public void TrocarCena(string nomeCena)
