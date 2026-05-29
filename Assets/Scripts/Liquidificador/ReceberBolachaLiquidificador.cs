@@ -16,7 +16,5 @@ public class ReceberBolachaLiquidificador : MonoBehaviour
 
         Destroy(collision.gameObject);
         bolachaNoLiquidificador.SetActive(true);
-
-        Debug.Log("Bolacha colocada no liquidificador.");
     }
 }
