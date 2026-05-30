@@ -2,15 +2,26 @@ using UnityEngine;
 
 public class DragColher : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private bool arrastando;
+
+    private void OnMouseDown()
     {
-        
+        Debug.Log("Pegou a colher");
+        arrastando = true;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnMouseUp()
     {
-        
+        arrastando = false;
+    }
+
+    private void Update()
+    {
+        if (!arrastando) return;
+
+        Vector3 mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mouse.z = 0;
+
+        transform.position = mouse;
     }
 }

@@ -53,7 +53,10 @@ public class DespejarNaForma : MonoBehaviour
         formaCheia.SetActive(true);
 
         yield return new WaitForSeconds(1f);
-
+        if (RecipeManager.instance != null)
+        {
+            RecipeManager.instance.formaPronta = true;
+        }
         SceneManager.LoadScene(cenaDepois);
     }
 }

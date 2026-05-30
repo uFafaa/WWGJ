@@ -375,7 +375,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.9, y: -0.115, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1447296097}
@@ -423,6 +423,7 @@ GameObject:
   - component: {fileID: 775542169}
   - component: {fileID: 775542168}
   - component: {fileID: 775542167}
+  - component: {fileID: 775542170}
   m_Layer: 0
   m_Name: FormaVazia
   m_TagString: Untagged
@@ -550,6 +551,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &775542170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 775542166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5721848fcac7b064f9d3e842cd6b5bc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DespejarNaForma
+  tigelaMassa: {fileID: 159046145}
+  formaCheia: {fileID: 1750316404}
+  pontoDespejo: {fileID: 707701024}
+  cenaDepois: CenaCozinha
 --- !u!1 &1447296096
 GameObject:
   m_ObjectHideFlags: 0
@@ -651,7 +668,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1589603641}
   - component: {fileID: 1589603640}
-  - component: {fileID: 1589603642}
   m_Layer: 0
   m_Name: Balcao
   m_TagString: Untagged
@@ -733,18 +749,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1589603642
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1589603639}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f364bb20455372c4dbfbe1db13f43bde, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DragColher
 --- !u!1 &1750316404
 GameObject:
   m_ObjectHideFlags: 0

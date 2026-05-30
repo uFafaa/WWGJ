@@ -12,21 +12,31 @@ public class RecipeManager : MonoBehaviour
 
     public bool massaPronta = false;
 
+    public bool formaPronta = false;
+
     private string[] objetivos =
     {
-        "Fale com o gato para receber o pedido.",
-        "Pegue as bolachas no armário.",
-        "Leve as bolachas ao liquidificador.",
-        "Triture as bolachas.",
-        "Pegue a manteiga na geladeira.",
-        "Misture bolacha e manteiga na tigela.",
-        "Coloque a massa na forma.",
-        "Leve a forma ao freezer.",
-        "Pegue amora, açúcar e limão na geladeira.",
-        "Leve os ingredientes ao fogão.",
-        "Prepare a geleia.",
-        "Coloque a geleia na torta.",
-        "Entregue a sobremesa."
+        "1. Falar com o gato",
+        "2. Pegar a bolacha",
+        "3. Levar a bolacha ao liquidificador",
+        "4. Colocar a bolacha no liquidificador",
+        "5. Apertar o botão do liquidificador",
+        "6. Esperar triturar",
+        "7. Colocar a bolacha triturada na tigela",
+        "8. Mexer a massa com a colher",
+        "9. Levar a massa para a forma",
+        "10. Despejar a massa na forma",
+        "11. Levar a forma ao freezer",
+        "12. Esperar gelar",
+        "13. Pegar amora, açúcar e limão",
+        "14. Levar os ingredientes ao fogão",
+        "15. Colocar amora na panela",
+        "16. Colocar açúcar na panela",
+        "17. Colocar limão na panela",
+        "18. Mexer/cozinhar a geleia",
+        "19. Colocar a geleia na torta",
+        "20. Entregar a torta para a rainha"
+        
     };
 
     private void Awake()
@@ -49,8 +59,11 @@ public class RecipeManager : MonoBehaviour
 
     public void AvancarEtapa()
     {
-        etapaAtual++;
-        AtualizarObjetivo();
+        if (etapaAtual < objetivos.Length - 1)
+        {
+            etapaAtual++;
+            AtualizarObjetivo();
+        }
     }
 
     public void AtualizarObjetivo()
