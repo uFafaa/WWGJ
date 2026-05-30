@@ -7,11 +7,11 @@ public class FreezerDescanso : MonoBehaviour
     public Slider barra;
     public GameObject formaCheia;
     public Transform pontoDescanso;
+    public float tempoDescanso = 30f;
 
-    public float tempoDescanso = 10f;
-
-    private bool descansando = false;
-    private bool playerPerto = false;
+    private bool playerPerto;
+    private bool descansando;
+    private bool jaDescansou;
 
     void Start()
     {
@@ -20,7 +20,7 @@ public class FreezerDescanso : MonoBehaviour
 
     void Update()
     {
-        if (playerPerto && Input.GetKeyDown(KeyCode.E) && !descansando)
+        if (playerPerto && Input.GetKeyDown(KeyCode.E) && !descansando && !jaDescansou)
         {
             StartCoroutine(DescansarForma());
         }
@@ -30,10 +30,18 @@ public class FreezerDescanso : MonoBehaviour
     {
         descansando = true;
 
+        CarregarForma carregar = formaCheia.GetComponent<CarregarForma>();
+        if (carregar != null)
+        {
+            carregar.Soltar();
+            carregar.enabled = false;
+        }
+
         formaCheia.transform.position = pontoDescanso.position;
 
         barra.gameObject.SetActive(true);
         barra.maxValue = tempoDescanso;
+        barra.value = tempoDescanso;
 
         float tempo = tempoDescanso;
 
@@ -46,9 +54,12 @@ public class FreezerDescanso : MonoBehaviour
 
         barra.gameObject.SetActive(false);
 
-        Debug.Log("Forma descansou no freezer!");
+        jaDescansou = true;
+        descansando = false;
 
         RecipeManager.instance.AvancarEtapa();
+
+        Debug.Log("Forma descansou. Agora pegue amora, açúcar e limão na geladeira.");
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

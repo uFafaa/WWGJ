@@ -1,23 +1,24 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class CarregarForma : MonoBehaviour
+public class IrParaFogao : MonoBehaviour
 {
-    public Transform player;
-    public Vector3 offset = new Vector3(0, 1.2f, 0);
+    public string nomeCenaFogao = "CenaFogao";
 
     private bool playerPerto;
-    public bool carregando;
 
     void Update()
     {
         if (playerPerto && Input.GetKeyDown(KeyCode.E))
         {
-            carregando = true;
-        }
-
-        if (carregando && player != null)
-        {
-            transform.position = player.position + offset;
+            if (RecipeManager.instance.etapaAtual >= 14)
+            {
+                SceneManager.LoadScene(nomeCenaFogao);
+            }
+            else
+            {
+                Debug.Log("Pegue os ingredientes na geladeira primeiro.");
+            }
         }
     }
 
@@ -31,10 +32,5 @@ public class CarregarForma : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
             playerPerto = false;
-    }
-
-    public void Soltar()
-    {
-        carregando = false;
     }
 }
