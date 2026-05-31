@@ -51,6 +51,7 @@ public class CozinharGeleia : MonoBehaviour
         if (RecipeManager.instance != null)
         {
             RecipeManager.instance.geleiaPronta = true;
+            RecipeManager.instance.formaMontagemPronta = true;
             RecipeManager.instance.AvancarEtapa();
         }
 

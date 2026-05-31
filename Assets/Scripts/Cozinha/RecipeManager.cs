@@ -16,6 +16,7 @@ public class RecipeManager : MonoBehaviour
     public bool ingredientesPegos = false;
     public bool geleiaPronta = false;
     public bool formaNoBalcao = false;
+    public bool formaMontagemPronta = false;
 
     private string[] objetivos =
     {
@@ -25,10 +26,9 @@ public class RecipeManager : MonoBehaviour
         "4. Colocar a bolacha no liquidificador",
         "5. Leve a forma ao freezer e espere descansar",
         "6. Leve ao balcão novamente",
-        "7. Pegar ingredientes na geladeira",
+        "7. Pegar amora, açúcar e suco de limão na geladeira",
         "8. Vá ao fogão e prepare os ingredientes",
-        "9. Pegar amora, açúcar e limão",
-        "10. Levar os ingredientes ao fogão",
+        "9. Coloque a geleia de amora e a forma no balcão perto do gato para montar a torta",
     };
 
     private void Awake()

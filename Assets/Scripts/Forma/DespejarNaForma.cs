@@ -56,6 +56,7 @@ public class DespejarNaForma : MonoBehaviour
         if (RecipeManager.instance != null)
         {
             RecipeManager.instance.formaPronta = true;
+            RecipeManager.instance.formaGelada = false;
         }
         SceneManager.LoadScene(cenaDepois);
     }
