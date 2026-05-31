@@ -11,14 +11,19 @@ public class IrParaFogao : MonoBehaviour
     {
         if (playerPerto && Input.GetKeyDown(KeyCode.E))
         {
-            if (RecipeManager.instance.etapaAtual >= 14)
+            if (RecipeManager.instance == null) return;
+
+            if (!RecipeManager.instance.ingredientesPegos)
             {
-                SceneManager.LoadScene(nomeCenaFogao);
+                Debug.Log("Pegue amora, açúcar e limão primeiro.");
+                return;
             }
-            else
-            {
-                Debug.Log("Pegue os ingredientes na geladeira primeiro.");
-            }
+
+            GameObject.Find("AmoraCarregada")?.SetActive(false);
+            GameObject.Find("AcucarCarregado")?.SetActive(false);
+            GameObject.Find("LimaoCarregado")?.SetActive(false);
+
+            SceneManager.LoadScene(nomeCenaFogao);
         }
     }
 

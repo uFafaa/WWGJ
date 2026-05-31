@@ -9,6 +9,9 @@ TagManager:
   - Colher
   - Tigela
   - Massa
+  - Amora
+  - Acucar
+  - SucoDeLimao
   layers:
   - Default
   - TransparentFX

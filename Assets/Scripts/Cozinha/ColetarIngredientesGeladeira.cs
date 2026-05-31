@@ -26,13 +26,27 @@ public class ColetarIngredientesGeladeira : MonoBehaviour
     {
         if (playerPerto && Input.GetKeyDown(KeyCode.E) && !coletou)
         {
+            if (RecipeManager.instance == null) return;
+
+            if (!RecipeManager.instance.formaGelada)
+            {
+                Debug.Log("Espere a forma ficar pronta no freezer.");
+                return;
+            }
+
+            if (!RecipeManager.instance.formaNoBalcao)
+            {
+                Debug.Log("Coloque a forma no balcão primeiro.");
+                return;
+            }
+
             coletou = true;
+            RecipeManager.instance.ingredientesPegos = true;
+            RecipeManager.instance.AvancarEtapa();
 
             amora.SetActive(true);
             acucar.SetActive(true);
             limao.SetActive(true);
-
-            RecipeManager.instance.AvancarEtapa();
 
             Debug.Log("Pegou amora, açúcar e limão.");
         }

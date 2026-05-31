@@ -5,8 +5,8 @@ public class CarregarForma : MonoBehaviour
     public Transform player;
     public Vector3 offset = new Vector3(0, 1.2f, 0);
 
-    private bool playerPerto;
-    public bool carregando;
+    public bool carregando = false;
+    private bool playerPerto = false;
 
     void Update()
     {
@@ -21,6 +21,11 @@ public class CarregarForma : MonoBehaviour
         }
     }
 
+    public void Soltar()
+    {
+        carregando = false;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
@@ -31,10 +36,5 @@ public class CarregarForma : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
             playerPerto = false;
-    }
-
-    public void Soltar()
-    {
-        carregando = false;
     }
 }
