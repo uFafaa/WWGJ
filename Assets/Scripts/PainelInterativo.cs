@@ -11,8 +11,15 @@ public class PapelInterativo : MonoBehaviour
     {
         if (jogadorPerto && Input.GetKeyDown(KeyCode.E))
         {
-            painelTexto.SetActive(true);
-            Destroy(gameObject);
+            if (!painelTexto.activeSelf)
+            {
+                painelTexto.SetActive(true);
+            }
+            else
+            {
+                painelTexto.SetActive(false);
+                Destroy(gameObject);
+            }
         }
     }
 
