@@ -11,8 +11,15 @@ public class PapelInterativo : MonoBehaviour
     {
         if (jogadorPerto && Input.GetKeyDown(KeyCode.E))
         {
-            bool painelEstaAtivo = painelTexto.activeSelf;
-            painelTexto.SetActive(!painelEstaAtivo);
+            if (!painelTexto.activeSelf)
+            {
+                painelTexto.SetActive(true);
+            }
+            else
+            {
+                painelTexto.SetActive(false);
+                Destroy(gameObject);
+            }
         }
     }
 
@@ -29,7 +36,6 @@ public class PapelInterativo : MonoBehaviour
         if (colisor.CompareTag("Player"))
         {
             jogadorPerto = false;
-            painelTexto.SetActive(false);
         }
     }
 }
