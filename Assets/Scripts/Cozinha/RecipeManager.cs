@@ -31,6 +31,7 @@ public class RecipeManager : MonoBehaviour
         "7. Pegar amora, açúcar e suco de limão na geladeira",
         "8. Vá ao fogão e prepare os ingredientes",
         "9. Coloque a geleia de amora e a forma no balcão perto do gato para montar a torta",
+        "10. Entregue a torta para a princesa"
     };
 
     private void Awake()
