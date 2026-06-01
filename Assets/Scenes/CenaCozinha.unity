@@ -666,6 +666,7 @@ MonoBehaviour:
   geleiaPronta: 0
   formaNoBalcao: 0
   formaMontagemPronta: 0
+  tortaPronta: 0
 --- !u!4 &135714004
 Transform:
   m_ObjectHideFlags: 0
@@ -3830,7 +3831,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MostrarItensMontagem
   formaMontagem: {fileID: 1851022645}
   geleiaPronta: {fileID: 132336261}
-  formaCheia: {fileID: 2108645868}
+  tortaFinalCozinha: {fileID: 0}
 --- !u!4 &1574290140
 Transform:
   m_ObjectHideFlags: 0
