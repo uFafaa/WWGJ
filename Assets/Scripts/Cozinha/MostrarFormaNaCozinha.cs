@@ -2,38 +2,35 @@ using UnityEngine;
 
 public class MostrarFormaNaCozinha : MonoBehaviour
 {
-    private void Start()
+    void Start()
     {
-        GameObject forma = EncontrarMesmoDesativado("FormaCheia");
+        GameObject forma = ProcurarMesmoDesativado("FormaCheia");
 
         if (forma == null)
         {
-            Debug.LogError("Não achei FormaCheia na CenaCozinha.");
+            Debug.LogError("Não achei FormaCheia.");
             return;
         }
 
         if (RecipeManager.instance != null && RecipeManager.instance.formaPronta)
         {
             forma.SetActive(true);
-            Debug.Log("FormaCheia apareceu na cozinha.");
+            Debug.Log("Ativei FormaCheia.");
         }
         else
         {
-            forma.SetActive(false);
-            Debug.Log("Forma ainda não está pronta.");
+            Debug.Log("FormaPronta ainda está false.");
         }
     }
 
-    GameObject EncontrarMesmoDesativado(string nome)
+    GameObject ProcurarMesmoDesativado(string nome)
     {
         Transform[] todos = Resources.FindObjectsOfTypeAll<Transform>();
 
-        foreach (Transform obj in todos)
+        foreach (Transform t in todos)
         {
-            if (obj.name == nome && obj.gameObject.scene.isLoaded)
-            {
-                return obj.gameObject;
-            }
+            if (t.name == nome && t.gameObject.scene.isLoaded)
+                return t.gameObject;
         }
 
         return null;

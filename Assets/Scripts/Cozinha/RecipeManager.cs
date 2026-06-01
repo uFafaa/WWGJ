@@ -17,6 +17,8 @@ public class RecipeManager : MonoBehaviour
     public bool geleiaPronta = false;
     public bool formaNoBalcao = false;
     public bool formaMontagemPronta = false;
+    public bool tortaPronta = false;
+    
 
     private string[] objetivos =
     {

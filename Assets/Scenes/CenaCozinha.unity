@@ -3807,6 +3807,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1574290140}
+  - component: {fileID: 1574290141}
   - component: {fileID: 1574290139}
   m_Layer: 0
   m_Name: ControleCozinha
@@ -3829,6 +3830,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MostrarItensMontagem
   formaMontagem: {fileID: 1851022645}
   geleiaPronta: {fileID: 132336261}
+  formaCheia: {fileID: 2108645868}
 --- !u!4 &1574290140
 Transform:
   m_ObjectHideFlags: 0
@@ -3844,6 +3846,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1574290141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1574290138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 109c020614bc6d849a9dea597fa784c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MostrarFormaNaCozinha
 --- !u!1 &1598908935
 GameObject:
   m_ObjectHideFlags: 0
@@ -5174,8 +5188,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2108645870}
-  - component: {fileID: 2108645872}
-  - component: {fileID: 2108645871}
+  - component: {fileID: 2108645874}
   - component: {fileID: 2108645869}
   - component: {fileID: 2108645873}
   m_Layer: 0
@@ -5259,33 +5272,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2108645871
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2108645868}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 109c020614bc6d849a9dea597fa784c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MostrarFormaNaCozinha
---- !u!114 &2108645872
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2108645868}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1cd21fc5bdb6f05448e6be78d9656004, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CarregarForma
-  player: {fileID: 782136618}
-  offset: {x: 0, y: 1.2, z: 0}
-  carregando: 0
 --- !u!61 &2108645873
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5332,6 +5318,21 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1.2158232}
   m_EdgeRadius: 0
+--- !u!114 &2108645874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2108645868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cd21fc5bdb6f05448e6be78d9656004, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CarregarForma
+  player: {fileID: 782136618}
+  offset: {x: 0, y: 1.2, z: 0}
+  carregando: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
