@@ -5,6 +5,8 @@ public class PapelInterativo : MonoBehaviour
     [Header("Configurações de UI")]
     public GameObject painelTexto;
 
+    public AudioSource audioPapel;
+
     private bool jogadorPerto = false;
 
     void Update()
@@ -14,6 +16,9 @@ public class PapelInterativo : MonoBehaviour
             if (!painelTexto.activeSelf)
             {
                 painelTexto.SetActive(true);
+
+                if (audioPapel != null)
+                    audioPapel.Play();             
             }
             else
             {
