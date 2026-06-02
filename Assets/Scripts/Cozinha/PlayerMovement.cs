@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         movimento.x = Input.GetAxisRaw("Horizontal");
-        movimento.y = Input.GetAxisRaw("Vertical");
+        
 
         movimento = movimento.normalized;
     }
