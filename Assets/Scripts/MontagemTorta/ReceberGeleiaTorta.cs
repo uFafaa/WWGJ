@@ -5,17 +5,11 @@ using UnityEngine.SceneManagement;
 public class ReceberGeleiaTorta : MonoBehaviour
 {
     public GameObject geleiaPronta;
-    public GameObject tortaFinal;
+    public GameObject tortaPronta;
     public Transform pontoDespejo;
     public string cenaDepois = "CenaCozinha";
 
     private bool despejando = false;
-
-    private void Start()
-    {
-        if (tortaFinal != null)
-            tortaFinal.SetActive(false);
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -52,20 +46,14 @@ public class ReceberGeleiaTorta : MonoBehaviour
         }
 
         geleia.SetActive(false);
-        gameObject.SetActive(false);
 
-        if (tortaFinal != null)
-            tortaFinal.SetActive(true);
+        if (tortaPronta != null)
+            tortaPronta.SetActive(true);
 
         if (RecipeManager.instance != null)
-        {
             RecipeManager.instance.tortaPronta = true;
-            RecipeManager.instance.AvancarEtapa();
-        }
 
-        Debug.Log("Voltando para CenaCozinha");
-
-        yield return new WaitForSeconds(1f);
+        Debug.Log("Carregando cozinha agora");
 
         SceneManager.LoadScene("CenaCozinha");
     }

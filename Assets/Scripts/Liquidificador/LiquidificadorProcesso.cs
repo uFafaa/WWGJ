@@ -5,14 +5,18 @@ using UnityEngine.UI;
 public class LiquidificadorProcesso : MonoBehaviour
 {
     public Slider barra;
+
     public GameObject bolachaInteira;
     public GameObject bolachaTriturada;
+
+    public float tempoTriturar = 5f;
+
     public AudioSource audioSource;
     public AudioClip somLiquidificador;
     public AudioClip somPronto;
-    public float tempoTriturar = 5f;
 
     private bool processando = false;
+    private bool terminou = false;
 
     private void Start()
     {
@@ -25,42 +29,61 @@ public class LiquidificadorProcesso : MonoBehaviour
 
     private void OnMouseDown()
     {
-        Debug.Log("Cliquei no botão do liquidificador");
+        if (processando || terminou) return;
 
-        if (!processando)
-        {
-            audioSource.clip = somLiquidificador;
-            audioSource.loop = true;
-            audioSource.Play();
-            StartCoroutine(Triturar());
-        }
+        StartCoroutine(Triturar());
     }
 
     IEnumerator Triturar()
     {
         processando = true;
 
-        barra.gameObject.SetActive(true);
+        if (barra != null)
+        {
+            barra.gameObject.SetActive(true);
+            barra.maxValue = tempoTriturar;
+            barra.value = tempoTriturar;
+        }
+
+        if (audioSource != null && somLiquidificador != null)
+        {
+            audioSource.Stop();
+            audioSource.clip = somLiquidificador;
+            audioSource.loop = true;
+            audioSource.Play();
+        }
 
         float tempo = tempoTriturar;
-        barra.maxValue = tempoTriturar;
-        barra.value = tempoTriturar;
 
         while (tempo > 0)
-        audioSource.Stop();
-        audioSource.loop = false;
-        audioSource.PlayOneShot(somPronto);
-        
         {
             tempo -= Time.deltaTime;
-            barra.value = tempo;
+
+            if (barra != null)
+                barra.value = tempo;
+
             yield return null;
         }
 
-        bolachaInteira.SetActive(false);
-        bolachaTriturada.SetActive(true);
-        barra.gameObject.SetActive(false);
+        if (audioSource != null)
+        {
+            audioSource.Stop();
+            audioSource.loop = false;
 
+            if (somPronto != null)
+                audioSource.PlayOneShot(somPronto);
+        }
+
+        if (barra != null)
+            barra.gameObject.SetActive(false);
+
+        if (bolachaInteira != null)
+            bolachaInteira.SetActive(false);
+
+        if (bolachaTriturada != null)
+            bolachaTriturada.SetActive(true);
+
+        terminou = true;
         processando = false;
     }
 }

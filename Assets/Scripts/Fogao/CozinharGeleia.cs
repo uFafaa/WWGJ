@@ -7,8 +7,13 @@ public class CozinharGeleia : MonoBehaviour
 {
     public Slider barra;
     public GameObject geleiaPronta;
+
     public float tempo = 15f;
     public string cenaDepois = "CenaCozinha";
+
+    public AudioSource audioSource;
+    public AudioClip somFervura;
+    public AudioClip somPronto;
 
     private bool iniciou = false;
 
@@ -31,22 +36,47 @@ public class CozinharGeleia : MonoBehaviour
 
     IEnumerator Cozinhar()
     {
-        barra.gameObject.SetActive(true);
-        barra.maxValue = tempo;
-        barra.value = tempo;
+        if (barra != null)
+        {
+            barra.gameObject.SetActive(true);
+            barra.maxValue = tempo;
+            barra.value = tempo;
+        }
+
+        if (audioSource != null && somFervura != null)
+        {
+            audioSource.Stop();
+            audioSource.clip = somFervura;
+            audioSource.loop = true;
+            audioSource.Play();
+        }
 
         float t = tempo;
 
         while (t > 0)
         {
             t -= Time.deltaTime;
-            barra.value = t;
+
+            if (barra != null)
+                barra.value = t;
+
             yield return null;
         }
 
-        barra.gameObject.SetActive(false);
+        if (audioSource != null)
+        {
+            audioSource.Stop();
+            audioSource.loop = false;
 
-        geleiaPronta.SetActive(true);
+            if (somPronto != null)
+                audioSource.PlayOneShot(somPronto);
+        }
+
+        if (barra != null)
+            barra.gameObject.SetActive(false);
+
+        if (geleiaPronta != null)
+            geleiaPronta.SetActive(true);
 
         if (RecipeManager.instance != null)
         {
@@ -57,7 +87,7 @@ public class CozinharGeleia : MonoBehaviour
 
         Debug.Log("Geleia pronta!");
 
-        yield return new WaitForSeconds(0.7f);
+        yield return new WaitForSecondsRealtime(1f);
 
         SceneManager.LoadScene(cenaDepois);
     }

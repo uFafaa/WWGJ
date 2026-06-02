@@ -7,17 +7,19 @@ public class DespejarGeleia : MonoBehaviour
     public Transform pontoDespejo;
     public GameObject tortaMontada;
 
+    public AudioSource audioSource;
+    public AudioClip somDespejar;
+
+    public string cenaDepois = "CenaCozinha";
+
     private bool despejando = false;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Encostou em: " + collision.name);
-
         if (despejando) return;
 
-        if (collision.CompareTag("MassaTorta"))
+        if (other.CompareTag("MassaTorta"))
         {
-            Debug.Log("Achou MassaTorta!");
             StartCoroutine(Despejar());
         }
     }
@@ -27,9 +29,15 @@ public class DespejarGeleia : MonoBehaviour
         despejando = true;
 
         DragItem drag = GetComponent<DragItem>();
-        if (drag != null) drag.enabled = false;
+        if (drag != null)
+            drag.enabled = false;
 
-        transform.position = pontoDespejo.position;
+        Collider2D col = GetComponent<Collider2D>();
+        if (col != null)
+            col.enabled = false;
+
+        if (pontoDespejo != null)
+            transform.position = pontoDespejo.position;
 
         Quaternion inicio = transform.rotation;
         Quaternion fim = Quaternion.Euler(0, 0, -60);
@@ -43,6 +51,13 @@ public class DespejarGeleia : MonoBehaviour
             yield return null;
         }
 
+        if (audioSource != null && somDespejar != null)
+        {
+            audioSource.PlayOneShot(somDespejar);
+        }
+
+        yield return new WaitForSecondsRealtime(0.5f);
+
         gameObject.SetActive(false);
 
         if (tortaMontada != null)
@@ -50,11 +65,10 @@ public class DespejarGeleia : MonoBehaviour
 
         if (RecipeManager.instance != null)
         {
+            RecipeManager.instance.tortaPronta = true;
             RecipeManager.instance.AvancarEtapa();
         }
 
-        Debug.Log("Carregando CenaCozinha agora");
-        RecipeManager.instance.tortaPronta = true;
-        SceneManager.LoadScene("CenaCozinha");
+        SceneManager.LoadScene(cenaDepois);
     }
 }

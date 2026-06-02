@@ -228,10 +228,10 @@ MonoBehaviour:
   barra: {fileID: 1576256003}
   bolachaInteira: {fileID: 1736645172}
   bolachaTriturada: {fileID: 405390505}
-  tempoTriturar: 5
   audioSource: {fileID: 66453581}
   somLiquidificador: {fileID: 8300000, guid: 07d3f24d1da26e246a5ad587b24e5cd3, type: 3}
   somPronto: {fileID: 8300000, guid: bb0d46bceabe7c94ca638a5944fdaea2, type: 3}
+  tempoTriturar: 5
 --- !u!58 &66453580
 CircleCollider2D:
   m_ObjectHideFlags: 0
