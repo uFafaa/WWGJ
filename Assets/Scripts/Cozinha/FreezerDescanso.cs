@@ -7,6 +7,9 @@ public class FreezerDescanso : MonoBehaviour
     public Slider barra;
     public GameObject formaCheia;
     public Transform pontoDescanso;
+    public AudioSource audioSource;
+    public AudioClip somRelogio;
+    public AudioClip somPronto;
 
     public float tempoDescanso = 30f;
 
@@ -50,6 +53,9 @@ public class FreezerDescanso : MonoBehaviour
         barra.value = tempoDescanso;
 
         float tempo = tempoDescanso;
+        audioSource.clip = somRelogio;
+        audioSource.loop = true;
+        audioSource.Play();
 
         while (tempo > 0)
         {
@@ -57,6 +63,9 @@ public class FreezerDescanso : MonoBehaviour
             barra.value = tempo;
             yield return null;
         }
+        audioSource.Stop();
+        audioSource.loop = false;
+        audioSource.PlayOneShot(somPronto);
 
         barra.gameObject.SetActive(false);
 

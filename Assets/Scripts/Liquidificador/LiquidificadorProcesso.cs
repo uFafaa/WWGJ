@@ -7,6 +7,9 @@ public class LiquidificadorProcesso : MonoBehaviour
     public Slider barra;
     public GameObject bolachaInteira;
     public GameObject bolachaTriturada;
+    public AudioSource audioSource;
+    public AudioClip somLiquidificador;
+    public AudioClip somPronto;
     public float tempoTriturar = 5f;
 
     private bool processando = false;
@@ -26,6 +29,9 @@ public class LiquidificadorProcesso : MonoBehaviour
 
         if (!processando)
         {
+            audioSource.clip = somLiquidificador;
+            audioSource.loop = true;
+            audioSource.Play();
             StartCoroutine(Triturar());
         }
     }
@@ -41,6 +47,10 @@ public class LiquidificadorProcesso : MonoBehaviour
         barra.value = tempoTriturar;
 
         while (tempo > 0)
+        audioSource.Stop();
+        audioSource.loop = false;
+        audioSource.PlayOneShot(somPronto);
+        
         {
             tempo -= Time.deltaTime;
             barra.value = tempo;
