@@ -7626,7 +7626,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1925320371}
   - component: {fileID: 1925320370}
-  - component: {fileID: 1925320374}
   - component: {fileID: 1925320369}
   - component: {fileID: 1925320372}
   - component: {fileID: 1925320373}
@@ -7772,7 +7771,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 5185e6d0cdc27ad42b6f956b5a6bb61b, type: 3}
+  m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -7858,19 +7857,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1925320374
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1925320368}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d653f80a39b67d0479f57d3d091dc8f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SomDePapel
-  audioPapel: {fileID: 1925320373}
 --- !u!1 &1956169001
 GameObject:
   m_ObjectHideFlags: 0
